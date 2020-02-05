@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="emailLabel">Email</string>
+    <string name="passwordLabel">Password</string>
+    <string name="signInLabel">Sign In</string>
+    <string name="signUpLabel">Sign Up</string>
+    <string name="welcomeText">Welcome</string>
+    <string name="instructionText">In next screen we list all shoes</string>
+    <string name="instructionTextSecond">Please click on the pair of shoes to display its details</string>
+    <string name="welcomeText_second">Welcome to Shoe app</string>
+    <string name="detail_shoe_name">Shoe name</string>
+    <string name="detail_company_name">Company name</string>
+    <string name="detail_shoe_size">Shoe size</string>
+    <string name="navigate">Next</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="detail_shoe_description">Shoe description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="logout">Logout</string>
+</resources>
