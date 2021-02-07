@@ -17,14 +17,14 @@ class ShoesAdapter(
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ShoeElementBinding.inflate(LayoutInflater.from(parent.context), parent, false).root
+        val shoeElementViewHolder =
+            ShoeElementBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ShoeElementViewHolder(shoeElementViewHolder)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
     }
 
-    override fun getItemCount(): Int {
-
-    }
+    override fun getItemCount() = items.size
 }

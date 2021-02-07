@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.instruction.InstructionViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -13,7 +20,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="@dimen/padding"
-            android:text="@string/welcomeText"
+            android:text="@string/instructionText"
             app:layout_constraintBottom_toTopOf="@+id/instructionTextSecond"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +33,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="@dimen/padding"
-            android:text="@string/welcomeText_second"
+            android:text="@string/instructionTextSecond"
             app:layout_constraintBottom_toTopOf="@+id/navigateToShoes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +43,7 @@
             android:id="@+id/navigateToShoes"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:onClick="@{()->viewModel.navigateToShoesList()}"
             android:padding="@dimen/padding"
             android:text="@string/navigate"
             app:layout_constraintBottom_toBottomOf="parent"

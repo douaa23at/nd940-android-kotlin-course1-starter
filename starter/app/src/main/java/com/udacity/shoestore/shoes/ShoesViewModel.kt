@@ -7,6 +7,7 @@ import com.udacity.shoestore.models.Shoe
 class ShoesViewModel : ViewModel() {
 
     val shoesList = MutableLiveData<List<Shoe>>()
+    val navigateToDetailPage = MutableLiveData<Boolean>()
 
     fun initialize() {
         shoesList.value = listOf(
@@ -14,5 +15,9 @@ class ShoesViewModel : ViewModel() {
             Shoe("gucci", 38.0, "gucci", "", listOf("")),
             Shoe("nike", 39.0, "nike", "", listOf(""))
         )
+    }
+
+    fun navigateToDetailPage() {
+        navigateToDetailPage.value = true
     }
 }

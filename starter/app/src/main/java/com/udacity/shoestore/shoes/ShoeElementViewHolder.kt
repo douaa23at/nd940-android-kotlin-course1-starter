@@ -2,14 +2,13 @@ package com.udacity.shoestore.shoes
 
 import androidx.recyclerview.widget.RecyclerView
 import com.udacity.shoestore.databinding.ShoeElementBinding
-import org.w3c.dom.Entity
 
 class ShoeElementViewHolder(
     private val binding: ShoeElementBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(entity: Entity) {
-    binding.
+        binding.entity = entity
     }
 
     data class Entity(
