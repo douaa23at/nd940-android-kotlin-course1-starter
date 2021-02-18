@@ -38,5 +38,15 @@
     <fragment
         android:id="@+id/shoeDetailsFragment"
         android:name="com.udacity.shoestore.shoes.ShoeDetailsFragment"
-        android:label="ShoeDetailsFragment" />
+        android:label="ShoeDetailsFragment" >
+        <action
+            android:id="@+id/cancelShoeAdding"
+            app:destination="@id/shoesFragment" />
+        <action
+            android:id="@+id/addShoe"
+            app:destination="@id/shoesFragment" />
+        <argument
+            android:name="shoe"
+            app:argType="com.udacity.shoestore.models.Shoe" />
+    </fragment>
 </navigation>

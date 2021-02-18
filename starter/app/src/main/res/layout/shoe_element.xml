@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
             name="entity"
-            type="com.udacity.shoestore.shoes.ShoeElementViewHolder.Entity" />
+            type="com.udacity.shoestore.shoes.ShoesAdapter.ShoeElementViewHolder.Entity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/shoeName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{entity.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{entity.company}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoeName" />
+
+
+        <TextView
+            android:id="@+id/shoeSize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{entity.size}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/companyName" />
+
+
+        <TextView
+            android:id="@+id/shoeDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{entity.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoeSize" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

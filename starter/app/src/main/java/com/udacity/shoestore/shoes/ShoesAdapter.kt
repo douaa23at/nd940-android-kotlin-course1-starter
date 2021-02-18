@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.udacity.shoestore.databinding.ShoeElementBinding
 import com.udacity.shoestore.models.Shoe
 
-class ShoesAdapter(
-    private val list: List<Shoe>
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ShoesAdapter : RecyclerView.Adapter<ShoesAdapter.ShoeElementViewHolder>() {
 
     var items: List<Shoe> = emptyList()
         set(value) {
@@ -16,15 +14,42 @@ class ShoesAdapter(
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoeElementViewHolder {
         val shoeElementViewHolder =
             ShoeElementBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ShoeElementViewHolder(shoeElementViewHolder)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
+    override fun onBindViewHolder(holder: ShoeElementViewHolder, i: Int) {
+        holder.bind(
+            ShoeElementViewHolder.Entity(
+                name = items[i].name,
+                size = items[i].size.toString(),
+                company = items[i].company,
+                description = items[i].description,
+                images = items[i].images
+            )
+        )
     }
 
     override fun getItemCount() = items.size
+
+    class ShoeElementViewHolder(
+        private val binding: ShoeElementBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(entity: Entity) {
+            binding.entity = entity
+        }
+
+        data class Entity(
+            val name: String,
+            val size: String,
+            val company: String,
+            val description: String,
+            val images: List<String> = mutableListOf()
+        )
+    }
+
+
 }
