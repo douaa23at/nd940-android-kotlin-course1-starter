@@ -32,7 +32,7 @@ class ShoesFragment : Fragment() {
         binding.viewModel = viewModel
         viewModel.navigateToDetailPage.observe(viewLifecycleOwner, Observer { navigate ->
             if (navigate) {
-                //findNavController().navigate(ShoesFragmentDirections.actionShoesFragmentToShoeDetailsFragment())
+                findNavController().navigate(ShoesFragmentDirections.navigateToDetail())
             }
         })
         adapter = ShoesAdapter()

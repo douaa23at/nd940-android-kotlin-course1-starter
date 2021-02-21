@@ -35,7 +35,7 @@ class ShoeDetailsFragment : Fragment() {
         binding.viewModel = viewModel
 
         viewModel.cancelShoesAdding.observe(viewLifecycleOwner, Observer {
-            findNavController().navigate(ShoeDetailsFragmentDirections.cancelShoeAdding())
+       //     findNavController().navigate(ShoeDetailsFragmentDirections.cancelShoeAdding())
         })
 
         viewModel.addShoeToListOfShoes.observe(viewLifecycleOwner, Observer {

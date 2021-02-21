@@ -7,6 +7,7 @@
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.login.LoginFragment"
         android:label="LoginFragment" >
+        
         <action
             android:id="@+id/action_loginFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment" />
@@ -32,21 +33,21 @@
         android:name="com.udacity.shoestore.shoes.ShoesFragment"
         android:label="ShoesFragment" >
         <action
-            android:id="@+id/action_shoesFragment_to_shoeDetailsFragment"
+            android:id="@+id/navigateToDetail"
             app:destination="@id/shoeDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailsFragment"
         android:name="com.udacity.shoestore.shoes.ShoeDetailsFragment"
         android:label="ShoeDetailsFragment" >
-        <action
-            android:id="@+id/cancelShoeAdding"
-            app:destination="@id/shoesFragment" />
-        <action
-            android:id="@+id/addShoe"
-            app:destination="@id/shoesFragment" />
         <argument
             android:name="shoe"
             app:argType="com.udacity.shoestore.models.Shoe" />
+
+        <action
+            android:id="@+id/addShoe"
+            app:destination="@id/shoesFragment" >
+        </action>
+
     </fragment>
 </navigation>
