@@ -18,7 +18,7 @@ import com.udacity.shoestore.databinding.FragmentShoeDetailsBinding
 class ShoeDetailsFragment : Fragment() {
 
     lateinit var binding: FragmentShoeDetailsBinding
-    lateinit var viewModel: ShoeDetailsViewModel
+    lateinit var viewModel: ShoeDetailsEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +31,17 @@ class ShoeDetailsFragment : Fragment() {
     ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
-        viewModel = ViewModelProvider(this).get(ShoeDetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ShoeDetailsEntity::class.java)
+        viewModel.init(binding)
         binding.viewModel = viewModel
 
         viewModel.cancelShoesAdding.observe(viewLifecycleOwner, Observer {
-       //     findNavController().navigate(ShoeDetailsFragmentDirections.cancelShoeAdding())
+            if (it)
+                findNavController().navigate(ShoeDetailsFragmentDirections.cancelAdding())
         })
 
-        viewModel.addShoeToListOfShoes.observe(viewLifecycleOwner, Observer {
-            findNavController().navigate(ShoeDetailsFragmentDirections.addShoe())
+        viewModel.addShoeToListOfShoes.observe(viewLifecycleOwner, Observer { shoe ->
+            findNavController().navigate(ShoeDetailsFragmentDirections.addShoe(shoe))
         })
 
         return binding.root
