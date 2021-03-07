@@ -50,5 +50,4 @@ class ShoesAdapter : RecyclerView.Adapter<ShoesAdapter.ShoeElementViewHolder>() 
         )
     }
 
-
 }
