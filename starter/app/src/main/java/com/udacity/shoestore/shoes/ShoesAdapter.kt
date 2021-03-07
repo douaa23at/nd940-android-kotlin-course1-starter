@@ -26,8 +26,7 @@ class ShoesAdapter : RecyclerView.Adapter<ShoesAdapter.ShoeElementViewHolder>() 
                 name = items[i].name,
                 size = items[i].size.toString(),
                 company = items[i].company,
-                description = items[i].description,
-                images = items[i].images
+                description = items[i].description
             )
         )
     }

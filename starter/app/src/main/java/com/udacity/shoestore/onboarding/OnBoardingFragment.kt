@@ -32,11 +32,11 @@ class OnBoardingFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(OnBoardingViewModel::class.java)
         binding.viewModel = viewModel
         viewModel.navigateToInstructions.observe(viewLifecycleOwner, Observer { navigate ->
-            if (navigate) {
-                findNavController().navigate(OnBoardingFragmentDirections.actionOnBoardingFragmentToInstructionFragment())
-            }
-        })
+                navigate.getContentIfNotHandled()?.let {
+                    findNavController().navigate(OnBoardingFragmentDirections.actionOnBoardingFragmentToInstructionFragment())
+                }
+            })
+
         return binding.root
     }
-
 }

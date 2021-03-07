@@ -16,12 +16,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding">
 
             <TextView
                 android:id="@+id/shoeName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding"
                 android:text="@{entity.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +34,7 @@
                 android:id="@+id/companyName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding"
                 android:text="@{entity.company}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +45,7 @@
                 android:id="@+id/shoeSize"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding"
                 android:text="@{entity.size}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

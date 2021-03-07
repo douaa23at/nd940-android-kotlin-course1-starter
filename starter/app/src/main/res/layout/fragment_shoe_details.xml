@@ -32,7 +32,7 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:labelFor="@id/shoeNameLabel"
-            android:text="@{viewModel.Entity.name}"
+            android:text="@={viewModel.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoeNameLabel"
@@ -54,7 +54,7 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:labelFor="@id/shoeNameLabel"
-            android:text="@{viewModel.Entity.company}"
+            android:text="@={viewModel.company}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/companyNameLabel"
@@ -76,28 +76,51 @@
             android:importantForAutofill="no"
             android:inputType="number"
             android:labelFor="@id/shoeNameLabel"
+            android:text="@={viewModel.shoeSize}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoeSizeLabel"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/shoeDescriptionLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSize" />
+
+        <EditText
+            android:id="@+id/shoeDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/shoe_description"
+            android:inputType="text"
+            android:text="@={viewModel.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionLabel"
             tools:ignore="LabelFor" />
 
         <Button
             android:id="@+id/cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.cancelShoesAdding(true)}"
+            android:onClick="@{() -> viewModel.cancelShoesAdding()}"
             android:text="@string/cancel"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoeSize" />
+            app:layout_constraintTop_toBottomOf="@id/shoeDescription" />
 
         <Button
-            android:id="@+id/save"
+            android:id="@+id/enabled"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.addShoeToListOfShoes(viewModel.entity)}"
+            android:enabled="@{viewModel.enabled}"
+            android:onClick="@{() -> viewModel.addShoeToListOfShoes()}"
             android:text="@string/save"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoeSize" />
+            app:layout_constraintTop_toBottomOf="@id/shoeDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

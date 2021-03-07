@@ -29,10 +29,9 @@ class LoginFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        viewModel.initialize()
         binding.viewModel = viewModel
         viewModel.navigateLiveEvent.observe(viewLifecycleOwner, Observer { navigate ->
-            if (navigate) {
+            navigate.getContentIfNotHandled()?.let {
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToOnBoardingFragment())
             }
         })

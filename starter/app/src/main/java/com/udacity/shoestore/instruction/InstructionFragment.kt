@@ -33,7 +33,7 @@ class InstructionFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(InstructionViewModel::class.java)
         binding.viewModel = viewModel
         viewModel.navigateToShoesList.observe(viewLifecycleOwner, Observer { navigate ->
-            if (navigate) {
+            navigate.getContentIfNotHandled()?.let {
                 findNavController().navigate(InstructionFragmentDirections.actionInstructionFragmentToShoesFragment())
             }
 

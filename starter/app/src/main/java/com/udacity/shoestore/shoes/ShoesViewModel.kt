@@ -3,21 +3,13 @@ package com.udacity.shoestore.shoes
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.utils.Event
 
 class ShoesViewModel : ViewModel() {
 
-    val shoesList = MutableLiveData<List<Shoe>>()
-    val navigateToDetailPage = MutableLiveData<Boolean>()
-
-    fun initialize() {
-        shoesList.value = listOf(
-            Shoe("prada", 37.0, "prada", "", listOf("")),
-            Shoe("gucci", 38.0, "gucci", "", listOf("")),
-            Shoe("nike", 39.0, "nike", "", listOf(""))
-        )
-    }
+    val navigateToDetailPage = MutableLiveData<Event<Unit>>()
 
     fun navigateToDetailPage() {
-        navigateToDetailPage.value = true
+        navigateToDetailPage.value = Event(Unit)
     }
 }

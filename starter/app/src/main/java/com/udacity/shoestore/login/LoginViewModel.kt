@@ -2,16 +2,14 @@ package com.udacity.shoestore.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.udacity.shoestore.utils.Event
 
 class LoginViewModel : ViewModel() {
 
-    val navigateLiveEvent = MutableLiveData<Boolean>()
+    val navigateLiveEvent = MutableLiveData<Event<Unit>>()
 
-    fun initialize() {
-        navigateLiveEvent.value = false
-    }
 
     fun navigateToWelcomePage() {
-        navigateLiveEvent.value = true
+        navigateLiveEvent.value = Event(Unit)
     }
 }
