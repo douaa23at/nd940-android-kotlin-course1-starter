@@ -11,7 +11,9 @@
 
         <action
             android:id="@+id/action_loginFragment_to_onBoardingFragment"
-            app:destination="@id/onBoardingFragment" />
+            app:destination="@id/onBoardingFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
@@ -19,7 +21,9 @@
         android:label="OnBoardingFragment">
         <action
             android:id="@+id/action_onBoardingFragment_to_instructionFragment"
-            app:destination="@id/instructionFragment" />
+            app:destination="@id/instructionFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
     </fragment>
     <fragment
         android:id="@+id/instructionFragment"
@@ -28,6 +32,8 @@
         <action
             android:id="@+id/action_instructionFragment_to_shoesFragment"
             app:destination="@id/shoesFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="false" />
     </fragment>
@@ -38,7 +44,10 @@
         <action
             android:id="@+id/navigateToDetail"
             app:destination="@id/shoeDetailsFragment"
-             />
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/shoesFragment"
+            app:popUpToInclusive="false" />
 
     </fragment>
     <fragment
@@ -49,7 +58,9 @@
         <action
             android:id="@+id/navigateToShoes"
             app:destination="@id/shoesFragment"
-            app:popUpTo="@id/instructionFragment" />
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpToInclusive="false" />
 
     </fragment>
 </navigation>

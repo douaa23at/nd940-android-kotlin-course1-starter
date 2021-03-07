@@ -2,5 +2,7 @@
 <resources>
     <dimen name="appLabelSize">46sp</dimen>
     <dimen name="padding">16dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="margin_label">4dp</dimen>
     <dimen name="elevation">4dp</dimen>
 </resources>
