@@ -8,7 +8,8 @@
             name="viewModel"
             type="com.udacity.shoestore.shoes.ShoesViewModel" />
     </data>
-
+    <!-- ConstraintLayout is used because the layout is fairly complex and in this case it will
+      have better performance than other layouts-->
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

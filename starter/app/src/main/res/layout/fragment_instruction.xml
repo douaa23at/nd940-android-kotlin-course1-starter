@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -7,37 +7,28 @@
             name="viewModel"
             type="com.udacity.shoestore.instruction.InstructionViewModel" />
     </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <!--LinearLayout is used because there is no nested layouts, the layout is so simple and it is
+    the fastest layout to implement compared to other layouts-->
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:context=".instruction.InstructionFragment">
 
         <TextView
             android:id="@+id/instructionText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="@dimen/padding"
-            android:text="@string/instructionText"
-            app:layout_constraintBottom_toTopOf="@+id/instructionTextSecond"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            android:text="@string/instructionText" />
 
         <TextView
             android:id="@+id/instructionTextSecond"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="@dimen/padding"
-            android:text="@string/instructionTextSecond"
-            app:layout_constraintBottom_toTopOf="@+id/navigateToShoes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instructionText" />
+            android:text="@string/instructionTextSecond" />
 
         <Button
             android:id="@+id/navigateToShoes"
@@ -45,10 +36,6 @@
             android:layout_height="wrap_content"
             android:onClick="@{()->viewModel.navigateToShoesList()}"
             android:padding="@dimen/padding"
-            android:text="@string/navigate"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instructionTextSecond" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@string/navigate" />
+    </LinearLayout>
 </layout>

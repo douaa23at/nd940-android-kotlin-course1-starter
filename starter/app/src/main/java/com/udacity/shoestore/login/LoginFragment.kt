@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 import com.udacity.shoestore.shoes.ShoesViewModel
+import com.udacity.shoestore.utils.hideKeyboard
 
 class LoginFragment : Fragment() {
 
@@ -32,6 +33,7 @@ class LoginFragment : Fragment() {
         binding.viewModel = viewModel
         viewModel.navigateLiveEvent.observe(viewLifecycleOwner, Observer { navigate ->
             navigate.getContentIfNotHandled()?.let {
+                hideKeyboard()
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToOnBoardingFragment())
             }
         })

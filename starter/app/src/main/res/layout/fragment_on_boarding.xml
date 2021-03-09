@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -7,49 +7,36 @@
             name="viewModel"
             type="com.udacity.shoestore.onboarding.OnBoardingViewModel" />
     </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <!--LinearLayout is used because there is no nested layouts, the layout is so simple and it is
+     the fastest layout to implement compared to other layouts-->
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:context=".onboarding.OnBoardingFragment">
 
         <TextView
             android:id="@+id/welcomeText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="@dimen/padding"
-            android:text="@string/welcomeText"
-            app:layout_constraintBottom_toTopOf="@+id/secondWelcomeText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            android:text="@string/welcomeText" />
 
         <TextView
             android:id="@+id/secondWelcomeText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="@dimen/padding"
-            android:text="@string/welcomeText_second"
-            app:layout_constraintBottom_toTopOf="@+id/navigate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+            android:text="@string/welcomeText_second" />
 
         <Button
             android:id="@+id/navigate"
             android:layout_width="100dp"
-            android:onClick="@{() -> viewModel.navigateToInstructions()}"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.navigateToInstructions()}"
             android:padding="@dimen/padding"
-            android:text="@string/navigate"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/secondWelcomeText" />
+            android:text="@string/navigate" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
