@@ -6,7 +6,7 @@
 
         <variable
             name="entity"
-            type="com.udacity.shoestore.shoes.ShoesAdapter.ShoeElementViewHolder.Entity" />
+            type="com.udacity.shoestore.models.Shoe" />
     </data>
     <!-- ConstraintLayout is used because the layout is fairly complex and in this case it will
       have better performance than other layouts-->
@@ -74,7 +74,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/padding"
-            android:text="@{entity.size}"
+            android:text="@{Double.toString(entity.size)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/shoeSizeLabel"
             app:layout_constraintTop_toBottomOf="@id/companyName" />
